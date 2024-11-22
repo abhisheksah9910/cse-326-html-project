@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Explore Page with Video</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+
+        }
+
+        .navbar {
+            background-color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            border-bottom: 1px solid #dbdbdb;
+            background: linear-gradient(to right, #f45608, #ee2a7b, #6228d7);
+
+        }
+
+        .navbar h1 {
+            color: #262626;
+            font-size: 24px;
+
+        }
+
+        /* Explore grid layout */
+        .explore-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            padding: 16px;
+        }
+
+        .explore-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .explore-item img,
+        .explore-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .explore-item:hover img,
+        .explore-item:hover video {
+            transform: scale(1.1);
+        }
+
+        .explore-item video {
+            pointer-events: none;
+        }
+
+        .explore-item:hover video {
+            pointer-events: auto;
+
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .explore-item:hover .overlay {
+            transform: translateY(0);
+        }
+
+        /* Modal for full-screen view */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            margin: auto;
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // Function to open the modal and display the clicked image or video
+        function openModal(src, type) {
+            const modal = document.getElementById("modal");
+            const modalImg = document.getElementById("modalImage");
+            const modalVideo = document.getElementById("modalVideo");
+
+            if (type === 'image') {
+                modalImg.src = src;
+                modalImg.style.display = 'block';
+                modalVideo.style.display = 'none';
+            } else if (type === 'video') {
+                modalVideo.src = src;
+                modalVideo.style.display = 'block';
+                modalImg.style.display = 'none';
+                modalVideo.play();
+            }
+
+            modal.style.display = "flex";
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            const modal = document.getElementById("modal");
+            const modalVideo = document.getElementById("modalVideo");
+            modal.style.display = "none";
+            modalVideo.pause();
+        }
+
+    </script>
+
+    <div class="navbar">
+        <h1>Explore</h1>
+    </div>
+
+    <div class="explore-grid">
+        <!-- Image Post -->
+        <div class="explore-item" onclick="openModal('rohit.jpg', 'image')">
+            <img src="rohit.jpg" alt="Explore Image">
+            <div class="overlay">
+                <p>&#9829</p>
+            </div>
+        </div>
+        <!-- Video Post -->
+        <div class="explore-item" onclick="openModal('marvel.mp4', 'video')">
+            <video muted>
+                <source src="marvel.mp4" type="video/mp4">
+            </video>
+            <div class="overlay">
+                <p>Dr.Doom</p>
+            </div>
+        </div>
+
+        <div class="explore-item" onclick="openModal('avatar.mp4', 'video')">
+            <video muted>
+                <source src="avatar.mp4" type="video/mp4">
+            </video>
+            <div class="overlay">
+                <p>Avatar</p>
+            </div>
+        </div>
+
+        <div class="explore-item" onclick="openModal('dc.mp4', 'video')">
+            <video muted>
+                <source src="dc.mp4" type="video/mp4">
+            </video>
+            <div class="overlay">
+                <p>Batman VS Superman</p>
+            </div>
+        </div>
+
+
+
+        <div class="explore-item" onclick="openModal('deadpool.mp4', 'video')">
+            <video muted>
+                <source src="deadpool.mp4" type="video/mp4">
+            </video>
+            <div class="overlay">
+                <p>Deadpool and wolverine</p>
+            </div>
+        </div>
+
+        <div class="explore-item" onclick="openModal('shangchi.mp4', 'video')">
+            <video muted>
+                <source src="shangchi.mp4" type="video/mp4">
+            </video>
+            <div class="overlay">
+                <p>Shangchi</p>
+            </div>
+        </div>
+
+        <div class="explore-item" onclick="openModal('virat.jpg', 'image')">
+            <img src="virat.jpg" alt="Explore Image">
+            <div class="overlay">
+                <p>&#9829</p>
+            </div>
+        </div>
+
+        <div class="explore-item" onclick="openModal('spider.mp4', 'video')">
+            <video muted>
+                <source src="spider.mp4" type="video/mp4">
+            </video>
+            <div class="overlay">
+                <p>spiderman</p>
+            </div>
+        </div>
+        <div class="explore-item" onclick="openModal('friends2.jpg', 'image')">
+            <img src="friends2.jpg" alt="Explore Image">
+            <div class="overlay">
+                <p>Birthday</p>
+            </div>
+        </div>
+
+
+        <div class="explore-item" onclick="openModal('spider2.mp4', 'video')">
+            <video muted>
+                <source src="spider2.mp4" type="video/mp4">
+            </video>
+            <div class="overlay">
+                <p>&#9829</p>
+            </div>
+        </div>
+
+
+
+        <div class="explore-item" onclick="openModal('spider3.mp4', 'video')">
+            <video muted>
+                <source src="spider3.mp4" type="video/mp4">
+            </video>
+            <div class="overlay">
+                <p>Spider man edit</p>
+            </div>
+        </div>
+
+        <div class="explore-item" onclick="openModal('hardik.jpg', 'image')">
+            <img src="hardik.jpg" alt="Explore Image">
+            <div class="overlay">
+                <p>&#9829</p>
+            </div>
+        </div>
+        <!-- Add more images and videos as needed -->
+    </div>
+
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <!-- Content changes based on whether it's an image or video -->
+        <img class="modal-content" id="modalImage">
+        <video class="modal-content" id="modalVideo" controls></video>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

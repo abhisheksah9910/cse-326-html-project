@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #f45608, #ee2a7b, #6228d7);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .login-box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .login-box h1 {
+            margin-bottom: 20px;
+            font-size: 30px;
+            color: #262626;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #0095f6;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0095f6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #007bbd;
+            transform: scale(1.05);
+        }
+
+        .signup-link {
+            margin-top: 15px;
+        }
+
+        .signup-link p {
+            color: #8e8e8e;
+        }
+
+        .signup-link a {
+            color: #0095f6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .signup-link a:hover {
+            color: #007bbd;
+        }
+
+        .login-box:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body>
+    <script> function mydata() {
+            var a = document.getElementById("n1").value;
+            var b = document.getElementById("n2").value;
+            if (a == "" || b == "") {
+                alert("All field are mandatory");
+                return false;
+            }
+            else {
+                true;
+            }
+        }
+    </script>
+    <div class="container">
+        <div class="login-box">
+            <h1>Instagram</h1>
+            <form onsubmit="return mydata()" action="index.html">
+                <input type="text" placeholder="Username" required id="n1">
+                <input type="password" placeholder="Password" required id="n2">
+                <button type="submit">Log In</button>
+            </form>
+            <div class="signup-link">
+                <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+            </div>
+            <footer style="color:#8e8e8e; padding: 10px 0; text-align: center;">
+                <p>&copy; 2024 instagram by Abhishek. All rights reserved.</p>
+
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>

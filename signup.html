@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Signup</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fafafa;
+            background: linear-gradient(to right,#f45608, #ee2a7b, #6228d7);
+        }
+        .container {
+            max-width: 350px;
+            padding: 40px;
+            background-color: #fff;
+            border: 1px solid #dbdbdb;
+            text-align: center;
+        }
+        .container h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #262626;
+        }
+        .container p {
+            font-size: 14px;
+            color: #8e8e8e;
+            margin-bottom: 20px;
+        }
+        .input-box {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #dbdbdb;
+            border-radius: 5px;
+            background-color: #fafafa;
+        }
+        .signup-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0095f6;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .signup-button:disabled {
+            background-color: #b2dffc;
+            cursor: not-allowed;
+        }
+        .or-divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .or-divider::before,
+        .or-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #dbdbdb;
+        }
+        .or-divider span {
+            margin: 0 10px;
+            color: #8e8e8e;
+            font-size: 12px;
+        }
+        .login-link {
+            font-size: 14px;
+            color: #0095f6;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign up</h1>
+        <p>Sign up to see photos and videos from your friends.</p>
+
+        <input type="email" class="input-box" placeholder="Mobile Number or Email">
+        <input type="text" class="input-box" placeholder="Full Name">
+        <input type="text" class="input-box" placeholder="Username">
+        <input type="password" class="input-box" placeholder="Password">
+        <a href="index.html">
+        <button class="signup-button" >Sign Up</button>
+        </a>
+        <div class="or-divider">
+            <span>OR</span>
+        </div>
+        
+        <a href="login.html" class="login-link">Log in</a>
+    </div>
+</body>
+</html>
