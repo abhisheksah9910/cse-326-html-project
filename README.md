@@ -12,14 +12,11 @@
             margin: 0;
             padding: 0;
         }
-
         body {
             font-family: Arial, sans-serif;
             background-color: #fafafa;
             color: #333;
-
         }
-
         header {
             display: flex;
             justify-content: space-between;
@@ -28,33 +25,27 @@
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
         .logo {
             font-weight: bold;
             font-size: 24px;
         }
-
         nav a {
             margin: 0 15px;
             text-decoration: none;
             color: #0073e6;
             transition: color 0.3s;
         }
-
         nav a:hover {
             color: #005bb5;
         }
-
         main {
             padding: 20px;
         }
-
         .smalldp {
             height: 30px;
             width: 30px;
             border-radius: 50px;
         }
-
         .post {
             background-color: #fff;
             border: 1px solid #eaeaea;
@@ -65,120 +56,96 @@
             width: 500px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
-
         .post-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
         }
-
         .post-image {
             width: 100%;
             border-radius: 5px;
             margin: 10px 0;
         }
-
         .heart {
             width: 30px;
             height: 30px;
             fill: #aaa;
             transition: transform 0.3s ease;
         }
-
         #heart-button {
             margin-left: 0px;
             float: left;
         }
-
         button.liked .heart {
             fill: #e0245e;
             animation: pop 0.3s forwards;
-
         }
-
         @keyframes pop {
             0% {
                 transform: scale(1);
             }
-
             50% {
                 transform: scale(1.2);
             }
-
             100% {
                 transform: scale(1);
             }
         }
-
         .btn:hover {
             opacity: 0.9;
         }
-
         #comment-button {
             margin-left: 10px;
             float: left;
         }
-
         .comment-icon {
             width: 30px;
             height: 30px;
             fill: #aaa;
             transition: transform 0.3s ease, fill 0.3s ease;
         }
-
         button.commented .comment-icon {
             fill: #1e90ff;
             animation: bounce 0.3s forwards;
         }
-
         @keyframes bounce {
             0% {
                 transform: scale(1);
             }
-
             50% {
                 transform: scale(1.2);
             }
-
             100% {
                 transform: scale(1);
             }
         }
-
         .plane-icon {
             width: 30px;
             height: 30px;
             fill: #aaa;
             transition: transform 0.3s ease, fill 0.3s ease;
         }
-
         #share-button {
             margin-left: 10px;
             float: left;
-
         }
-
         button.shared .plane-icon {
             fill: #1e90ff;
             animation: fly 0.5s forwards;
         }
-
         @keyframes fly {
             0% {
                 transform: translateX(0) rotate(0deg);
             }
-
             50% {
                 transform: translateX(-10px) rotate(10deg);
             }
-
             100% {
                 transform: translateX(100px) rotate(-45deg);
                 opacity: 0;
             }
         }
-
         .sidebar {
             width: 250px;
             background-color: #fff;
@@ -191,13 +158,11 @@
             height: 100vh;
             background: linear-gradient(to bottom, #f45608, #ee2a7b, #515bd4);
         }
-
         .sidebar-logo {
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 40px;
         }
-
         .nav-item {
             width: 90%;
             padding: 15px;
@@ -211,25 +176,21 @@
             border-radius: 8px;
             transition: background-color 0.3s, color 0.3s;
         }
-
         .nav-item:hover {
             background-color: #f0f0f0;
             color: #0095f6;
         }
-
         .nav-item svg {
             margin-right: 15px;
             width: 24px;
             height: 24px;
             fill: currentColor;
         }
-
         .nav-item.active {
             background-color: #e0f7fa;
             color: #0095f6;
             font-weight: bold;
         }
-
         .footer {
             margin-top: auto;
             font-size: 12px;
@@ -237,9 +198,6 @@
             text-align: center;
             padding: 20px;
         }
-
-
-        
         .story-navigation {
             display: flex;
             margin-right: 350px;
@@ -247,34 +205,25 @@
             background-color: #fafafa;
             width: 900px;
         }
-
         .story {
             flex: 0 0 auto;
             text-align: center;
             margin-right: 10px;
             cursor: pointer;
-
         }
-
         .story img {
             width: 80px;
             height: 80px;
             border-radius: 50%;
             border: 3px solid #FF4500;
-           
         }
-
         .story p {
             margin-top: 5px;
             font-size: 12px;
             color: #333;
         }
-
-        
-
         .story-modal {
             display: none;
-           
             position: fixed;
             top: 0;
             left: 0;
@@ -284,13 +233,11 @@
             justify-content: center;
             align-items: center;
         }
-
         .story-modal video {
             max-width: 90%;
             max-height: 90%;
             border-radius: 15px;
         }
-
         .close-btn {
             position: absolute;
             top: 20px;
@@ -313,11 +260,9 @@
                 const button = document.getElementById('comment-button');
                 button.classList.toggle('commented');
             }
-
             function toggleShare() {
                 const button = document.getElementById('share-button');
                 button.classList.add('shared');
-
                 // Reset animation after it completes
                 setTimeout(() => {
                     button.classList.remove('shared');
@@ -327,22 +272,18 @@
             function openStory(videoSrc) {
                 const modal = document.getElementById('storyModal');
                 const video = document.getElementById('storyVideo');
-
                 video.src = videoSrc; // Set the video source
                 video.play(); // Play the video
                 modal.style.display = 'flex'; // Show the modal
             }
-
             // Function to close the story
             function closeStory() {
                 const modal = document.getElementById('storyModal');
                 const video = document.getElementById('storyVideo');
-
                 video.pause(); // Pause the video
                 video.currentTime = 0; // Reset the video time
                 modal.style.display = 'none'; // Hide the modal
             }
-
         </script>
         <div class="sidebar">
             <div class="sidebar-logo">
@@ -355,7 +296,6 @@
                 </svg>
                 Home
             </a>
-
             <a href="explore.html" class="nav-item">
                 <svg viewBox="0 0 24 24">
                     <path
@@ -363,7 +303,6 @@
                 </svg>
                 Explore
             </a>
-
             <a href="https://www.messenger.com/" class="nav-item">
                 <svg viewBox="0 0 24 24">
                     <path d="M20 2h-8c-1.1 0-2 .9-2 2v12h8V4h2v16h-2v2h8V4c0-1.1-.9-2-2-2z" />
@@ -395,9 +334,6 @@
             <div class="footer">
                 © 2024 Instagram by Abhishek
             </div>
-
-
-
         </div>
         <header>
             <div id="aa"></div>
@@ -458,31 +394,21 @@
                     <img src="sony.png" alt="User 3">
                     <p>Sony</p>
                 </div>
-
-
-
-
-
             </div>
-
             <!-- Modal for playing stories -->
             <div class="story-modal" id="storyModal">
                 <span class="close-btn" onclick="closeStory()">&times;</span>
                 <video id="storyVideo" controls></video>
             </div>
         </header>
-
         <main>
-
             <div class="post">
                 <div class="post-header">
                     <img src="dp.jpg" alt="Post Image" class="smalldp">
                     <h4 style="margin-right:315px;">its_abhisheek</h4>
-
                 </div>
                 <img src="friends.jpg" alt="Post Image" class="post-image">
                 <!-- <video class="post-image" src="marvel.mp4"  muted loop autoplay > -->
-
                 </video>
                 <button id="heart-button" onclick="toggleLike()" style="text-align:left">
                     <svg class="heart" viewBox="0 0 24 24">
@@ -504,17 +430,13 @@
                 <br><br><br><br>
                 <p class="post-caption" style="text-align: left; ">Capturing the essence of friendship &#128512</p>
             </div>
-
-
             <div class="post">
                 <div class="post-header">
                     <img src="adi2.jpg" alt="Post Image" class="smalldp">
                     <h4 style="margin-right:325px;">aditya_gupta</h4>
-
                 </div>
                 <img src="friends2.jpg" alt="Post Image" class="post-image">
                 <!-- <video class="post-image" src="marvel.mp4"  muted loop autoplay > -->
-
                 </video>
                 <button id="heart-button" onclick="toggleLike()" style="text-align:left">
                     <svg class="heart" viewBox="0 0 24 24">
@@ -537,17 +459,13 @@
                 <p class="post-caption" style="text-align: left; ">Birthday celebration with awesome batchmates &#127880
                     &#127881 &#127882</p>
             </div>
-
-
             <div class="post">
                 <div class="post-header">
                     <img src="group1.jpg" alt="Post Image" class="smalldp">
                     <h4 style="margin-right:330px;">rohit_kumar</h4>
-
                 </div>
                 <!-- <img src="dp.jpg" alt="Post Image" class="post-image"> -->
                 <video class="post-image" src="avatar.mp4" muted loop autoplay>
-
                 </video>
                 <button id="heart-button" onclick="toggleLike()" style="text-align:left">
                     <svg class="heart" viewBox="0 0 24 24">
@@ -569,16 +487,13 @@
                 <br><br><br><br>
                 <p class="post-caption" style="text-align: left; ">Avatar: The way of water</p>
             </div>
-
             <div class="post">
                 <div class="post-header">
                     <img src="marvel.jpg" alt="Post Image" class="smalldp">
                     <h4 style="margin-right:370px;">marvel</h4>
-
                 </div>
                 <!-- <img src="dp.jpg" alt="Post Image" class="post-image"> -->
                 <video class="post-image" src="shangchi.mp4" muted loop autoplay>
-
                 </video>
                 <button id="heart-button" onclick="toggleLike()" style="text-align:left">
                     <svg class="heart" viewBox="0 0 24 24">
@@ -600,16 +515,13 @@
                 <br><br><br><br>
                 <p class="post-caption" style="text-align: left; ">Shangchi</p>
             </div>
-
             <div class="post">
                 <div class="post-header">
                     <img src="deadpool.jpeg" alt="Post Image" class="smalldp">
                     <h4 style="margin-right:350px;">deadpool</h4>
-
                 </div>
                 <!-- <img src="dp.jpg" alt="Post Image" class="post-image"> -->
                 <video class="post-image" src="deadpool.mp4" muted loop autoplay>
-
                 </video>
                 <button id="heart-button" onclick="toggleLike()" style="text-align:left">
                     <svg class="heart" viewBox="0 0 24 24">
@@ -631,16 +543,13 @@
                 <br><br><br><br>
                 <p class="post-caption" style="text-align: left; ">Deadpool & Woolverine</p>
             </div>
-
             <div class="post">
                 <div class="post-header">
                     <img src="marvel.jpg" alt="Post Image" class="smalldp">
                     <h4 style="margin-right:370px;">marvel</h4>
-
                 </div>
                 <!-- <img src="dp.jpg" alt="Post Image" class="post-image"> -->
                 <video class="post-image" src="marvel.mp4" muted loop autoplay>
-
                 </video>
                 <button id="heart-button" onclick="toggleLike()" style="text-align:left">
                     <svg class="heart" viewBox="0 0 24 24">
@@ -662,16 +571,13 @@
                 <br><br><br><br>
                 <p class="post-caption" style="text-align: left; ">RDJ As Dr. Doom</p>
             </div>
-
             <div class="post">
                 <div class="post-header">
                     <img src="marvel.jpg" alt="Post Image" class="smalldp">
                     <h4 style="margin-right:370px;">marvel</h4>
-
                 </div>
                 <!-- <img src="dp.jpg" alt="Post Image" class="post-image"> -->
                 <video class="post-image" src="spider3.mp4" muted loop autoplay>
-
                 </video>
                 <button id="heart-button" onclick="toggleLike()" style="text-align:left">
                     <svg class="heart" viewBox="0 0 24 24">
@@ -693,16 +599,13 @@
                 <br><br><br><br>
                 <p class="post-caption" style="text-align: left; ">spierman</p>
             </div>
-
             <div class="post">
                 <div class="post-header">
                     <img src="marvel.jpg" alt="Post Image" class="smalldp">
                     <h4 style="margin-right:370px;">marvel</h4>
-
                 </div>
                 <!-- <img src="dp.jpg" alt="Post Image" class="post-image"> -->
                 <video class="post-image" src="dc.mp4" muted loop autoplay>
-
                 </video>
                 <button id="heart-button" onclick="toggleLike()" style="text-align:left">
                     <svg class="heart" viewBox="0 0 24 24">
@@ -724,16 +627,13 @@
                 <br><br><br><br>
                 <p class="post-caption" style="text-align: left; ">Superman & Batman</p>
             </div>
-
             <div class="post">
                 <div class="post-header">
                     <img src="marvel.jpg" alt="Post Image" class="smalldp">
                     <h4 style="margin-right:370px;">marvel</h4>
-
                 </div>
                 <!-- <img src="dp.jpg" alt="Post Image" class="post-image"> -->
                 <video class="post-image" src="spider2.mp4" muted loop autoplay>
-
                 </video>
                 <button id="heart-button" onclick="toggleLike()" style="text-align:left">
                     <svg class="heart" viewBox="0 0 24 24">
@@ -755,16 +655,13 @@
                 <br><br><br><br>
                 <p class="post-caption" style="text-align: left; ">spiderman</p>
             </div>
-
             <div class="post">
                 <div class="post-header">
                     <img src="marvel.jpg" alt="Post Image" class="smalldp">
                     <h4 style="margin-right:370px;">marvel</h4>
-
                 </div>
                 <!-- <img src="dp.jpg" alt="Post Image" class="post-image"> -->
                 <video class="post-image" src="spider.mp4" muted loop autoplay>
-
                 </video>
                 <button id="heart-button" onclick="toggleLike()" style="text-align:left">
                     <svg class="heart" viewBox="0 0 24 24">
@@ -786,8 +683,6 @@
                 <br><br><br><br>
                 <p class="post-caption" style="text-align: left; ">spiderman</p>
             </div>
-
-
         </main>
     </center>
 </body>
